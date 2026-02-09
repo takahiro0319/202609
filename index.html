@@ -3,17 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2025年12月 勉強会活動報告書</title>
+<title>2026年1月 勉強会活動報告書</title>
 <style>
     :root {
-        --primary-bg: #f8f9fa;
+        --primary-bg: #f0f4f8;
         --card-bg: #ffffff;
-        --text-main: #2c3e50;
-        --text-sub: #5f6368;
-        --accent-a: #FF6B6B; /* Team A Color */
-        --accent-b: #4ECDC4; /* Team B Color */
-        --accent-c: #45B7D1; /* Team C Color */
-        --timeline-line: #e9ecef;
+        --text-main: #1a202c;
+        --text-sub: #718096;
+        --accent-a: #e53e3e; /* Team A: Red */
+        --accent-b: #319795; /* Team B: Teal */
+        --accent-c: #3182ce; /* Team C: Blue */
+        --header-gradient: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+        --timeline-line: #cbd5e0;
     }
 
     body {
@@ -23,7 +24,7 @@
         margin: 0;
         padding: 0;
         line-height: 1.6;
-        overflow-x: hidden; /* 横スクロール防止 */
+        overflow-x: hidden;
     }
 
     .container {
@@ -33,15 +34,30 @@
         box-sizing: border-box;
     }
 
-    /* Header Design */
+    /* Header Design - 2026 New Year Theme */
     header {
         text-align: center;
         margin-bottom: 60px;
         padding: 60px 20px;
-        background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
+        background: var(--header-gradient);
         color: white;
         border-radius: 16px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        position: relative;
+        overflow: hidden;
+    }
+
+    header::after {
+        content: "2026";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 8rem;
+        font-weight: 900;
+        opacity: 0.05;
+        letter-spacing: 0.1em;
+        pointer-events: none;
     }
 
     header h1 {
@@ -49,12 +65,16 @@
         margin: 0 0 10px 0;
         font-weight: 700;
         letter-spacing: 0.05em;
+        position: relative;
+        z-index: 1;
     }
 
     header p {
         font-size: 1.1rem;
         opacity: 0.9;
         margin: 0;
+        position: relative;
+        z-index: 1;
     }
 
     /* Team Section Layout */
@@ -242,7 +262,7 @@
             flex-direction: column;
             align-items: flex-start;
         }
-
+        
         .team-meta {
             text-align: left;
             margin-top: 5px;
@@ -251,7 +271,7 @@
         .team-section {
             padding: 25px;
         }
-
+        
         header h1 {
             font-size: 1.8rem;
         }
@@ -262,8 +282,8 @@
 
 <div class="container">
     <header>
-        <h1>2025年12月 勉強会活動報告書</h1>
-        <p>Monthly Activity Report / Design System Project</p>
+        <h1>2026年1月 勉強会活動報告書</h1>
+        <p>Monthly Activity Report / Design System Project Phase 2</p>
     </header>
 
     <!-- Team A -->
@@ -272,7 +292,7 @@
             <h2 class="team-name">Team A</h2>
             <div class="team-meta">
                 参加者: 高橋 来実、加藤 美央、佐久間 大地、takahiro yamada<br>
-                開催日: 12/3, 12/10, 12/17 (計3回)
+                開催日: 1/6, 1/13, 1/20, 1/27 (計4回)
             </div>
         </div>
 
@@ -280,26 +300,18 @@
         <ul class="timeline">
             <li class="timeline-item">
                 <div class="timeline-marker"></div>
-                <span class="timeline-date">12/03: テキストスタイルの効率化</span>
+                <span class="timeline-date">2026/01/06: 決済フローのプロトタイプ</span>
                 <div class="timeline-content">
-                    <span class="timeline-title">フォントサイズとプロパティの一括管理</span>
-                    フォントサイズをスタイルとして登録し、リライト作業を効率化する方法を実践。高橋氏は商品詳細ページのプロトタイプ作成に着手し、バリアント（色違いや視点違い）を切り替える設定を実施。
+                    <span class="timeline-title">カート〜購入完了の遷移設計</span>
+                    年末に完成させた商品ページからの接続を確認。高橋氏が「カートに追加」時のドロワー表示と、決済画面への遷移アニメーション（スマートアニメーション）を実装。入力フォームのバリデーション状態（エラー/成功）のバリアントも追加。
                 </div>
             </li>
             <li class="timeline-item">
                 <div class="timeline-marker"></div>
-                <span class="timeline-date">12/10: サイト設計とユーザビリティ</span>
+                <span class="timeline-date">2026/01/20: 開発ハンドオフの準備</span>
                 <div class="timeline-content">
-                    <span class="timeline-title">コーディングを見据えたデザイン調整</span>
-                    お問い合わせフォームのデザイン不一致や、サイト内のパーセンテージ不統一といった設計上の課題を議論。高橋氏のプロトタイプで「白いスニーカー」への遷移バグが発生し、次週への持ち越し課題とした。
-                </div>
-            </li>
-            <li class="timeline-item">
-                <div class="timeline-marker"></div>
-                <span class="timeline-date">12/17: Figmaサイトでのコーディング検証</span>
-                <div class="timeline-content">
-                    <span class="timeline-title">レスポンシブとオートレイアウトの修正</span>
-                    Figmaサイト機能で公開した際のアラート（横スクロール不成立や画像マスク不備）を修正。「#」アイコンを持つレイヤー（フレーム）の削除や、全体のオートレイアウト適用など、コーディング視点でのデータ整理を実施。
+                    <span class="timeline-title">エンジニア向けドキュメントの整備</span>
+                    加藤氏主導で、FigmaのDev Modeを活用した注釈付けを実施。余白（Spacing）トークンがコードと一致しているか、佐久間氏がレビューを行い、実装時の手戻りを防ぐためのルールを策定。
                 </div>
             </li>
         </ul>
@@ -308,13 +320,13 @@
         <div class="member-grid">
             <div class="member-card">
                 <div class="member-name">高橋 来実</div>
-                <div class="member-text"><span class="tag-label label-challenge">課題</span>商品ページにおけるプロトタイプの遷移設定（特に画像切り替え）と、Figmaサイト公開時のレイアウト崩れ。</div>
-                <div class="member-text"><span class="tag-label label-goal">目標</span>Figmaサイト機能を使って、コーディング知識なしでも公開できるレベルまでデータを整えること。</div>
+                <div class="member-text"><span class="tag-label label-challenge">課題</span>複雑な条件分岐（ログイン状態による遷移の違い）をプロトタイプで再現する際のロジック整理。</div>
+                <div class="member-text"><span class="tag-label label-goal">目標</span>インタラクティブコンポーネントを駆使し、実アプリに近い挙動の完全なモックアップを完成させる。</div>
             </div>
             <div class="member-card">
                 <div class="member-name">加藤 美央</div>
-                <div class="member-text"><span class="tag-label label-challenge">課題</span>フローティングメニューのレイヤー順序や、レスポンシブ時のコンテナ拡大縮小設定の理解。</div>
-                <div class="member-text"><span class="tag-label label-goal">目標</span>タイポグラフィーやオートレイアウトのルールを徹底し、エラーのないデザインデータを構築する。</div>
+                <div class="member-text"><span class="tag-label label-challenge">課題</span>セクション設定（Section）とステータス管理（Ready for Dev）の運用ルールの定着。</div>
+                <div class="member-text"><span class="tag-label label-goal">目標</span>開発チームへの引き渡し会を主催し、スムーズな実装開始をサポートする。</div>
             </div>
         </div>
     </section>
@@ -325,7 +337,7 @@
             <h2 class="team-name">Team B</h2>
             <div class="team-meta">
                 参加者: 小野原 梨沙、菅原 望美、takahiro yamada<br>
-                開催日: 12/12 (計1回)
+                開催日: 1/8, 1/15, 1/22 (計3回)
             </div>
         </div>
 
@@ -333,10 +345,18 @@
         <ul class="timeline">
             <li class="timeline-item">
                 <div class="timeline-marker"></div>
-                <span class="timeline-date">12/12: カラー運用ルールの統一</span>
+                <span class="timeline-date">2026/01/08: バリアブルモード(Dark Mode)</span>
                 <div class="timeline-content">
-                    <span class="timeline-title">Figmaバリアブルの効率的な運用</span>
-                    PC版トップページの色割り当てを実施。プリミティブ（基本色）とセマンティック（意味づけされた色）への登録フローを再確認し、特に「赤色」の追加登録と系統立てた管理方法を学習。チーム全体での「色のルール決め」の重要性を共有。
+                    <span class="timeline-title">カラー変数のモード拡張</span>
+                    Figmaのバリアブル機能を用いて「Light/Dark」モードを作成。菅原氏がプリミティブカラーの割り当てを見直し、ダークモード時に背景色と文字色が適切なコントラスト比を保てるよう再設計を実施。
+                </div>
+            </li>
+            <li class="timeline-item">
+                <div class="timeline-marker"></div>
+                <span class="timeline-date">2026/01/22: タイポグラフィとグリッド</span>
+                <div class="timeline-content">
+                    <span class="timeline-title">レスポンシブ文字サイズの定義</span>
+                    小野原氏がSP/Tablet/PCごとの見出しサイズ（H1〜H6）の変動ルールを定義。Vrem単位での実装を想定し、ルートフォントサイズに基づいたスケールをシステムに登録。
                 </div>
             </li>
         </ul>
@@ -345,13 +365,13 @@
         <div class="member-grid">
             <div class="member-card">
                 <div class="member-name">菅原 望美</div>
-                <div class="member-text"><span class="tag-label label-challenge">課題</span>SP版へのカラー適用と、テキスト入力欄の仕様理解。</div>
-                <div class="member-text"><span class="tag-label label-goal">目標</span>PC版で確立した色のルールをSP版にも展開し、作業を完了させる。</div>
+                <div class="member-text"><span class="tag-label label-challenge">課題</span>ダークモード時のシャドウ（Elevation）の表現方法と、ブランドカラーの視認性確保。</div>
+                <div class="member-text"><span class="tag-label label-goal">目標</span>全コンポーネントに対してダークモード変数を適用し、ワンクリックで切り替え可能な状態にする。</div>
             </div>
             <div class="member-card">
                 <div class="member-name">小野原 梨沙</div>
-                <div class="member-text"><span class="tag-label label-challenge">課題</span>未定義色（「はてな」マーク）の特定と解消、コンポーネント反映のラグへの対応。</div>
-                <div class="member-text"><span class="tag-label label-goal">目標</span>タイポグラフィーの再登録作業と、次ページ（SP版など）への展開。</div>
+                <div class="member-text"><span class="tag-label label-challenge">課題</span>既存デザインへのグリッドスタイル適用時のレイアウト修正工数。</div>
+                <div class="member-text"><span class="tag-label label-goal">目標</span>グリッドシステムのマニュアルを作成し、他チームへの展開を図る。</div>
             </div>
         </div>
     </section>
@@ -362,7 +382,7 @@
             <h2 class="team-name">Team C</h2>
             <div class="team-meta">
                 参加者: 宇佐見 海斗、中田 邦枝、井戸本 萌、takahiro yamada<br>
-                開催日: 12/1, 12/8, 12/15 (計3回)
+                開催日: 1/7, 1/14, 1/21, 1/28 (計4回)
             </div>
         </div>
 
@@ -370,26 +390,18 @@
         <ul class="timeline">
             <li class="timeline-item">
                 <div class="timeline-marker"></div>
-                <span class="timeline-date">12/01: オートレイアウトの基礎</span>
+                <span class="timeline-date">2026/01/07: 複合コンポーネント(Header/Footer)</span>
                 <div class="timeline-content">
-                    <span class="timeline-title">レスポンシブなコンテナ設定</span>
-                    コンテンツが崩れずに横幅に合わせて伸縮するよう、オートレイアウトの設定（コンテナに合わせて拡大）を調整。「重要なお知らせ」セクションのカード化とコンポーネント化を実施。
+                    <span class="timeline-title">グローバルナビゲーションの構築</span>
+                    中田氏がメガメニューを含むヘッダーコンポーネントを作成。スクロール時の固定表示（Sticky）設定と、SP時のハンバーガーメニューへの変形ロジックをオートレイアウトで実現。
                 </div>
             </li>
             <li class="timeline-item">
                 <div class="timeline-marker"></div>
-                <span class="timeline-date">12/08: カラーパレットと新コンポーネント</span>
+                <span class="timeline-date">2026/01/21: パターンライブラリ</span>
                 <div class="timeline-content">
-                    <span class="timeline-title">「調達情報と日付」コンポーネントの作成</span>
-                    デザインに必要なカラーコード（Dark Gray 666など）が不足していたため、プリミティブから追加しセマンティックに登録。プロパティ設定でタイトルや日付を打ち替え可能にし、作業効率を向上。
-                </div>
-            </li>
-            <li class="timeline-item">
-                <div class="timeline-marker"></div>
-                <span class="timeline-date">12/15: 複雑なレイアウトの調整</span>
-                <div class="timeline-content">
-                    <span class="timeline-title">「カセットラージ2」の再構築</span>
-                    セクション間のスペース問題を解決するため、既存コンポーネントを複製・再構築。5つの要素をオートレイアウトで合体させ、全体のレイアウト（幅1186px）を調整して中央揃えにするプロセスを共有。
+                    <span class="timeline-title">UIスタックの整理</span>
+                    宇佐見氏と井戸本氏が、頻出するUIパターン（カードリスト、検索フィルター、モーダル）をパターンとして登録。「Slot」コンポーネントを活用し、中身を自由に入れ替えられる柔軟な構造を採用。
                 </div>
             </li>
         </ul>
@@ -398,13 +410,13 @@
         <div class="member-grid">
             <div class="member-card">
                 <div class="member-name">中田 邦枝</div>
-                <div class="member-text"><span class="tag-label label-challenge">課題</span>オートレイアウトのネスト構造（親と子）の理解と、適切なグループ化。</div>
-                <div class="member-text"><span class="tag-label label-goal">目標</span>作成した「カセットラージ2」を使って既存コンポーネントを差し替え、ページ全体を完成させる。</div>
+                <div class="member-text"><span class="tag-label label-challenge">課題</span>SP版ヘッダーのアニメーション（展開動作）におけるレイヤー構造の複雑化。</div>
+                <div class="member-text"><span class="tag-label label-goal">目標</span>Header/Footerを全画面に適用し、サイト全体のナビゲーション体験を統一する。</div>
             </div>
             <div class="member-card">
                 <div class="member-name">宇佐見 海斗</div>
-                <div class="member-text"><span class="tag-label label-challenge">課題</span>マイク接続トラブル（iPhoneで解決）や、コンポーネントプロパティの設定手順。</div>
-                <div class="member-text"><span class="tag-label label-goal">目標</span>作成したカードコンポーネントを量産し、画像とテキストの差し替え作業を完了させる。</div>
+                <div class="member-text"><span class="tag-label label-challenge">課題</span>Slotコンポーネントの概念理解と、チームメンバーへの使用方法のレクチャー。</div>
+                <div class="member-text"><span class="tag-label label-goal">目標</span>パターンライブラリを充実させ、新規ページ作成時間を50%短縮する。</div>
             </div>
         </div>
     </section>
