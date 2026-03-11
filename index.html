@@ -1,427 +1,194 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2026年1月 勉強会活動報告書</title>
-<style>
-    :root {
-        --primary-bg: #f0f4f8;
-        --card-bg: #ffffff;
-        --text-main: #1a202c;
-        --text-sub: #718096;
-        --accent-a: #e53e3e; /* Team A: Red */
-        --accent-b: #319795; /* Team B: Teal */
-        --accent-c: #3182ce; /* Team C: Blue */
-        --header-gradient: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-        --timeline-line: #cbd5e0;
-    }
-
-    body {
-        font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-        background-color: var(--primary-bg);
-        color: var(--text-main);
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
-        overflow-x: hidden;
-    }
-
-    .container {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 40px 20px;
-        box-sizing: border-box;
-    }
-
-    /* Header Design - 2026 New Year Theme */
-    header {
-        text-align: center;
-        margin-bottom: 60px;
-        padding: 60px 20px;
-        background: var(--header-gradient);
-        color: white;
-        border-radius: 16px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        position: relative;
-        overflow: hidden;
-    }
-
-    header::after {
-        content: "2026";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 8rem;
-        font-weight: 900;
-        opacity: 0.05;
-        letter-spacing: 0.1em;
-        pointer-events: none;
-    }
-
-    header h1 {
-        font-size: 2.5rem;
-        margin: 0 0 10px 0;
-        font-weight: 700;
-        letter-spacing: 0.05em;
-        position: relative;
-        z-index: 1;
-    }
-
-    header p {
-        font-size: 1.1rem;
-        opacity: 0.9;
-        margin: 0;
-        position: relative;
-        z-index: 1;
-    }
-
-    /* Team Section Layout */
-    .team-section {
-        background: var(--card-bg);
-        border-radius: 16px;
-        margin-bottom: 50px;
-        padding: 40px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .team-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 6px;
-        height: 100%;
-    }
-
-    .team-a::before { background-color: var(--accent-a); }
-    .team-b::before { background-color: var(--accent-b); }
-    .team-c::before { background-color: var(--accent-c); }
-
-    .team-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        border-bottom: 2px solid var(--timeline-line);
-        padding-bottom: 20px;
-        margin-bottom: 30px;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .team-name {
-        font-size: 2rem;
-        font-weight: bold;
-        color: var(--text-main);
-        margin: 0;
-    }
-
-    .team-meta {
-        font-size: 0.95rem;
-        color: var(--text-sub);
-        text-align: right;
-    }
-
-    h3 {
-        font-size: 1.3rem;
-        margin: 30px 0 20px;
-        color: var(--text-main);
-        display: flex;
-        align-items: center;
-    }
-
-    h3::before {
-        content: '';
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        background-color: var(--text-main);
-        margin-right: 10px;
-        border-radius: 50%;
-    }
-
-    /* Timeline */
-    .timeline {
-        padding: 0;
-        list-style: none;
-        position: relative;
-    }
-
-    .timeline::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 15px;
-        width: 2px;
-        background: var(--timeline-line);
-    }
-
-    .timeline-item {
-        position: relative;
-        padding-left: 40px;
-        margin-bottom: 25px;
-    }
-
-    .timeline-marker {
-        position: absolute;
-        left: 6px;
-        top: 8px;
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        background: var(--card-bg);
-        border: 3px solid var(--text-sub);
-        z-index: 1;
-    }
-
-    .team-a .timeline-marker { border-color: var(--accent-a); }
-    .team-b .timeline-marker { border-color: var(--accent-b); }
-    .team-c .timeline-marker { border-color: var(--accent-c); }
-
-    .timeline-date {
-        font-size: 0.9rem;
-        font-weight: bold;
-        color: var(--text-sub);
-        margin-bottom: 5px;
-        display: block;
-    }
-
-    .timeline-content {
-        background: #f8f9fa;
-        padding: 15px 20px;
-        border-radius: 8px;
-        border-left: 4px solid transparent;
-    }
-
-    .team-a .timeline-content { border-left-color: var(--accent-a); }
-    .team-b .timeline-content { border-left-color: var(--accent-b); }
-    .team-c .timeline-content { border-left-color: var(--accent-c); }
-
-    .timeline-title {
-        font-weight: bold;
-        font-size: 1.05rem;
-        margin-bottom: 5px;
-        display: block;
-    }
-
-    /* Member Cards */
-    .member-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-        margin-top: 20px;
-    }
-
-    .member-card {
-        background: white;
-        border: 1px solid #eee;
-        border-radius: 12px;
-        padding: 20px;
-        transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .member-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    }
-
-    .member-name {
-        font-size: 1.1rem;
-        font-weight: bold;
-        margin-bottom: 12px;
-        border-bottom: 1px solid #eee;
-        padding-bottom: 8px;
-    }
-
-    .tag-label {
-        display: inline-block;
-        font-size: 0.75rem;
-        font-weight: bold;
-        padding: 3px 8px;
-        border-radius: 4px;
-        margin-right: 5px;
-        margin-bottom: 5px;
-    }
-
-    .label-challenge { background-color: #fff0f0; color: #e74c3c; }
-    .label-goal { background-color: #e8f5e9; color: #27ae60; }
-
-    .member-text {
-        font-size: 0.9rem;
-        margin-bottom: 8px;
-        line-height: 1.5;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-        .team-header {
-            flex-direction: column;
-            align-items: flex-start;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026年2月 勉強会活動報告書</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
         }
-        
-        .team-meta {
-            text-align: left;
-            margin-top: 5px;
-        }
-
-        .team-section {
-            padding: 25px;
-        }
-        
-        header h1 {
-            font-size: 1.8rem;
-        }
-    }
-</style>
+    </style>
 </head>
-<body>
+<body class="antialiased text-gray-800 py-8">
 
-<div class="container">
-    <header>
-        <h1>2026年1月 勉強会活動報告書</h1>
-        <p>Monthly Activity Report / Design System Project Phase 2</p>
-    </header>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <header class="mb-10 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">2026年2月 勉強会活動報告書</h1>
+            <p class="text-lg text-gray-600">Design System Project / 月間サマリー</p>
+        </header>
 
-    <!-- Team A -->
-    <section class="team-section team-a">
-        <div class="team-header">
-            <h2 class="team-name">Team A</h2>
-            <div class="team-meta">
-                参加者: 高橋 来実、加藤 美央、佐久間 大地、takahiro yamada<br>
-                開催日: 1/6, 1/13, 1/20, 1/27 (計4回)
+        <!-- Team A Section -->
+        <section class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 mb-8">
+            <div class="border-b border-gray-200 pb-4 mb-6 flex flex-col md:flex-row md:items-center md:justify-between">
+                <h2 class="text-2xl font-bold text-blue-700 flex items-center gap-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    Team A 活動報告
+                </h2>
+                <span class="mt-2 md:mt-0 inline-block bg-blue-50 text-blue-600 text-sm px-3 py-1 rounded-full font-medium">開催日: 2026/02/18</span>
             </div>
-        </div>
 
-        <h3>📚 活動ハイライト (Meet Recordingsより)</h3>
-        <ul class="timeline">
-            <li class="timeline-item">
-                <div class="timeline-marker"></div>
-                <span class="timeline-date">2026/01/06: 決済フローのプロトタイプ</span>
-                <div class="timeline-content">
-                    <span class="timeline-title">カート〜購入完了の遷移設計</span>
-                    年末に完成させた商品ページからの接続を確認。高橋氏が「カートに追加」時のドロワー表示と、決済画面への遷移アニメーション（スマートアニメーション）を実装。入力フォームのバリデーション状態（エラー/成功）のバリアントも追加。
+            <div class="mb-8">
+                <h3 class="text-lg font-semibold text-gray-800 mb-3 border-l-4 border-blue-500 pl-3">活動ハイライト</h3>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span><strong class="text-gray-900">テスト計画と進行確認:</strong> 新規ページ作成は行わず、完成形のページ移行を目標に設定。完了後にはFigmaデザインでのコーディングと、スクショを元にした機能的ページデザインの再現テスト（約2時間）を実施する構想を共有しました。</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span><strong class="text-gray-900">横幅の比率固定と水平スクロール:</strong> コンポーネントの横幅比率が固定されていない問題を「アスペクト比のロック」で解消。固定値(410px等)を外し、最大幅(870px)と「コンテナに合わせた拡大」を設定。また、オートレイアウトを束ねる親要素に水平スクロールを正しく適用しました。</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span><strong class="text-gray-900">フッターの再構築と画像コンポーネント:</strong> 商品ページの画像要素が比率を維持したまま縮小されるよう「マッチングレイヤー」を設定。横幅が拡大しないフッターは、グループ（フレーム）化が原因だったため、解除してオートレイアウトとして再構築しました。</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-4 border-l-4 border-blue-500 pl-3">メンバー別 課題と目標</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-gray-50 rounded-lg p-4 border border-gray-100">
+                        <h4 class="font-bold text-gray-900 mb-2 flex items-center">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center mr-2 text-sm">加藤</span>
+                            加藤 美央
+                        </h4>
+                        <div class="space-y-2 text-sm text-gray-700">
+                            <p><span class="inline-block bg-red-100 text-red-700 px-2 py-0.5 rounded text-xs font-bold mr-1">課題</span> 特定のコンポーネントで横幅の比率固定や、画面縮小時の横スクロール挙動が意図通りに機能していなかった。</p>
+                            <p><span class="inline-block bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-xs font-bold mr-1">目標</span> デザインの再現（比率の固定、横スクロールの設定、コンテナに合わせる設定）に関する修正を完了させる。</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4 border border-gray-100">
+                        <h4 class="font-bold text-gray-900 mb-2 flex items-center">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center mr-2 text-sm">高橋</span>
+                            高橋 来実
+                        </h4>
+                        <div class="space-y-2 text-sm text-gray-700">
+                            <p><span class="inline-block bg-red-100 text-red-700 px-2 py-0.5 rounded text-xs font-bold mr-1">課題</span> 商品ページの画像比率維持設定や、フッターセクションがフレーム化されており横幅が適切に拡大しない問題。</p>
+                            <p><span class="inline-block bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-xs font-bold mr-1">目標</span> オートレイアウトの再構築、コンポーネント化、絶対位置の指定など、残りのデザイン調整を行う。</p>
+                        </div>
+                    </div>
                 </div>
-            </li>
-            <li class="timeline-item">
-                <div class="timeline-marker"></div>
-                <span class="timeline-date">2026/01/20: 開発ハンドオフの準備</span>
-                <div class="timeline-content">
-                    <span class="timeline-title">エンジニア向けドキュメントの整備</span>
-                    加藤氏主導で、FigmaのDev Modeを活用した注釈付けを実施。余白（Spacing）トークンがコードと一致しているか、佐久間氏がレビューを行い、実装時の手戻りを防ぐためのルールを策定。
+            </div>
+        </section>
+
+        <!-- Team B Section -->
+        <section class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 mb-8">
+            <div class="border-b border-gray-200 pb-4 mb-6 flex flex-col md:flex-row md:items-center md:justify-between">
+                <h2 class="text-2xl font-bold text-indigo-700 flex items-center gap-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    Team B 活動報告
+                </h2>
+                <span class="mt-2 md:mt-0 inline-block bg-indigo-50 text-indigo-600 text-sm px-3 py-1 rounded-full font-medium">開催日: 2026/02/06, 02/27</span>
+            </div>
+
+            <div class="mb-8">
+                <h3 class="text-lg font-semibold text-gray-800 mb-3 border-l-4 border-indigo-500 pl-3">活動ハイライト</h3>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span><strong class="text-gray-900">2/6: AIコーディングとレスポンシブの仕組み:</strong> FigmaからAIを用いてコーディングを実演。レスポンシブ対応をAIに任せるだけでなく、Figma側でのオートレイアウト（下変や固定値の適切な設定）が崩れを防ぐために重要であることを確認しました。</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span><strong class="text-gray-900">2/27: サムネイル作成とデザイン添削:</strong> ファイル管理と視認性向上のためサムネイル作成機能を実施。背景色と装飾の被り回避、文字の太さ、グループ解除後のフレーム再配置など、レイアウトと技術的な添削を行いました。</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span><strong class="text-gray-900">2/27: フォームのコンポーネント化と微調整:</strong> テキスト入力フィールドの通常/エラー状態のプロトタイプ設定、チェックボックスのアイコン化を指導。また、レスポンシブ時の最小幅（108px）や最大高さ（686px）の設定を最終調整しました。</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-4 border-l-4 border-indigo-500 pl-3">メンバー別 課題と目標</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-gray-50 rounded-lg p-4 border border-gray-100">
+                        <h4 class="font-bold text-gray-900 mb-2 flex items-center">
+                            <span class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center mr-2 text-sm">菅原</span>
+                            菅原 望美
+                        </h4>
+                        <div class="space-y-2 text-sm text-gray-700">
+                            <p><span class="inline-block bg-red-100 text-red-700 px-2 py-0.5 rounded text-xs font-bold mr-1">課題</span> レスポンシブ対応において、要素の幅や最小幅が固定値になっており、意図通りに縮小・拡大しない問題。</p>
+                            <p><span class="inline-block bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded text-xs font-bold mr-1">目標</span> デザイン内の固定値設定を見直し、横幅352、左側108、最大高さ686等のレスポンシブ設定を再現する。</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4 border border-gray-100">
+                        <h4 class="font-bold text-gray-900 mb-2 flex items-center">
+                            <span class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center mr-2 text-sm">小野原</span>
+                            小野原 梨沙
+                        </h4>
+                        <div class="space-y-2 text-sm text-gray-700">
+                            <p><span class="inline-block bg-red-100 text-red-700 px-2 py-0.5 rounded text-xs font-bold mr-1">課題</span> お問い合わせフォームの入力フィールド（エラー表示等の状態変化）や、チェックボックスのコンポーネント化に苦戦。</p>
+                            <p><span class="inline-block bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded text-xs font-bold mr-1">目標</span> お問い合わせ内容の縦幅を広げて調整し、要素をコンポーネント化・登録して指定の場所に貼り付ける作業を行う。</p>
+                        </div>
+                    </div>
                 </div>
-            </li>
-        </ul>
-
-        <h3>👤 メンバー別 課題と目標</h3>
-        <div class="member-grid">
-            <div class="member-card">
-                <div class="member-name">高橋 来実</div>
-                <div class="member-text"><span class="tag-label label-challenge">課題</span>複雑な条件分岐（ログイン状態による遷移の違い）をプロトタイプで再現する際のロジック整理。</div>
-                <div class="member-text"><span class="tag-label label-goal">目標</span>インタラクティブコンポーネントを駆使し、実アプリに近い挙動の完全なモックアップを完成させる。</div>
             </div>
-            <div class="member-card">
-                <div class="member-name">加藤 美央</div>
-                <div class="member-text"><span class="tag-label label-challenge">課題</span>セクション設定（Section）とステータス管理（Ready for Dev）の運用ルールの定着。</div>
-                <div class="member-text"><span class="tag-label label-goal">目標</span>開発チームへの引き渡し会を主催し、スムーズな実装開始をサポートする。</div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Team B -->
-    <section class="team-section team-b">
-        <div class="team-header">
-            <h2 class="team-name">Team B</h2>
-            <div class="team-meta">
-                参加者: 小野原 梨沙、菅原 望美、takahiro yamada<br>
-                開催日: 1/8, 1/15, 1/22 (計3回)
+        <!-- Team C Section -->
+        <section class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8 mb-8">
+            <div class="border-b border-gray-200 pb-4 mb-6 flex flex-col md:flex-row md:items-center md:justify-between">
+                <h2 class="text-2xl font-bold text-emerald-700 flex items-center gap-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    Team C 活動報告
+                </h2>
+                <span class="mt-2 md:mt-0 inline-block bg-emerald-50 text-emerald-600 text-sm px-3 py-1 rounded-full font-medium">開催日: 2026/02/06, 02/13, 02/20, 02/27</span>
             </div>
-        </div>
 
-        <h3>📚 活動ハイライト (Meet Recordingsより)</h3>
-        <ul class="timeline">
-            <li class="timeline-item">
-                <div class="timeline-marker"></div>
-                <span class="timeline-date">2026/01/08: バリアブルモード(Dark Mode)</span>
-                <div class="timeline-content">
-                    <span class="timeline-title">カラー変数のモード拡張</span>
-                    Figmaのバリアブル機能を用いて「Light/Dark」モードを作成。菅原氏がプリミティブカラーの割り当てを見直し、ダークモード時に背景色と文字色が適切なコントラスト比を保てるよう再設計を実施。
+            <div class="mb-8">
+                <h3 class="text-lg font-semibold text-gray-800 mb-3 border-l-4 border-emerald-500 pl-3">活動ハイライト</h3>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span><strong class="text-gray-900">バリアントの命名規則とエラー解消:</strong> 競合するアイコンのバリアントプロパティ（名前やサイズ違い）の命名規則を修正しアラートを解消。外部リンクアイコンの表示/非表示設定や、非表示後に枠だけが残る問題の解決を図りました。</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span><strong class="text-gray-900">ウェブサイト挙動の理屈と制約の理解:</strong> オートレイアウトで最大値（1186pxや1190px）を指定し、「コンテナに合わせて拡大」を設定。広がりすぎない制約や、左右の固定マージン（24px）を確保するウェブ特有の「理屈」を学習しました。</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span><strong class="text-gray-900">サービスセクションのバリエーション構築:</strong> 見出しや「調達情報」の有無、ピクセル間隔（24pxと16px）の違いなど、共通点と相違点を分析し、Figmaのコンポーネント機能で効率的に一元管理する構造を構築しました。</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-4 border-l-4 border-emerald-500 pl-3">メンバー別 課題と目標</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-gray-50 rounded-lg p-4 border border-gray-100">
+                        <h4 class="font-bold text-gray-900 mb-2 flex items-center">
+                            <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mr-2 text-sm">中田</span>
+                            中田 邦枝
+                        </h4>
+                        <div class="space-y-2 text-sm text-gray-700">
+                            <p><span class="inline-block bg-red-100 text-red-700 px-2 py-0.5 rounded text-xs font-bold mr-1">課題</span> オートレイアウトの適用方向（縦/横）の誤りや、非表示設定後に外枠の高さが残る問題、サイズ調整に苦戦。</p>
+                            <p><span class="inline-block bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded text-xs font-bold mr-1">目標</span> オートレイアウトを二重でかけることで最大幅を1190に固定し、コンポーネントの名前を「本文」など分かりやすく整理する。</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4 border border-gray-100">
+                        <h4 class="font-bold text-gray-900 mb-2 flex items-center">
+                            <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mr-2 text-sm">宇佐見</span>
+                            宇佐見 海斗
+                        </h4>
+                        <div class="space-y-2 text-sm text-gray-700">
+                            <p><span class="inline-block bg-red-100 text-red-700 px-2 py-0.5 rounded text-xs font-bold mr-1">課題</span> テキスト伸長時に矢印アイコンが追従しない問題や、意図せず横いっぱいに広がってしまうオートレイアウトの不備。</p>
+                            <p><span class="inline-block bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded text-xs font-bold mr-1">目標</span> 最大値(1186px)設定と「コンテナに合わせて拡大」の理屈を他の箇所にも適用し、適切なバリアント管理を行う。</p>
+                        </div>
+                    </div>
                 </div>
-            </li>
-            <li class="timeline-item">
-                <div class="timeline-marker"></div>
-                <span class="timeline-date">2026/01/22: タイポグラフィとグリッド</span>
-                <div class="timeline-content">
-                    <span class="timeline-title">レスポンシブ文字サイズの定義</span>
-                    小野原氏がSP/Tablet/PCごとの見出しサイズ（H1〜H6）の変動ルールを定義。Vrem単位での実装を想定し、ルートフォントサイズに基づいたスケールをシステムに登録。
-                </div>
-            </li>
-        </ul>
-
-        <h3>👤 メンバー別 課題と目標</h3>
-        <div class="member-grid">
-            <div class="member-card">
-                <div class="member-name">菅原 望美</div>
-                <div class="member-text"><span class="tag-label label-challenge">課題</span>ダークモード時のシャドウ（Elevation）の表現方法と、ブランドカラーの視認性確保。</div>
-                <div class="member-text"><span class="tag-label label-goal">目標</span>全コンポーネントに対してダークモード変数を適用し、ワンクリックで切り替え可能な状態にする。</div>
             </div>
-            <div class="member-card">
-                <div class="member-name">小野原 梨沙</div>
-                <div class="member-text"><span class="tag-label label-challenge">課題</span>既存デザインへのグリッドスタイル適用時のレイアウト修正工数。</div>
-                <div class="member-text"><span class="tag-label label-goal">目標</span>グリッドシステムのマニュアルを作成し、他チームへの展開を図る。</div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Team C -->
-    <section class="team-section team-c">
-        <div class="team-header">
-            <h2 class="team-name">Team C</h2>
-            <div class="team-meta">
-                参加者: 宇佐見 海斗、中田 邦枝、井戸本 萌、takahiro yamada<br>
-                開催日: 1/7, 1/14, 1/21, 1/28 (計4回)
-            </div>
-        </div>
-
-        <h3>📚 活動ハイライト (Meet Recordingsより)</h3>
-        <ul class="timeline">
-            <li class="timeline-item">
-                <div class="timeline-marker"></div>
-                <span class="timeline-date">2026/01/07: 複合コンポーネント(Header/Footer)</span>
-                <div class="timeline-content">
-                    <span class="timeline-title">グローバルナビゲーションの構築</span>
-                    中田氏がメガメニューを含むヘッダーコンポーネントを作成。スクロール時の固定表示（Sticky）設定と、SP時のハンバーガーメニューへの変形ロジックをオートレイアウトで実現。
-                </div>
-            </li>
-            <li class="timeline-item">
-                <div class="timeline-marker"></div>
-                <span class="timeline-date">2026/01/21: パターンライブラリ</span>
-                <div class="timeline-content">
-                    <span class="timeline-title">UIスタックの整理</span>
-                    宇佐見氏と井戸本氏が、頻出するUIパターン（カードリスト、検索フィルター、モーダル）をパターンとして登録。「Slot」コンポーネントを活用し、中身を自由に入れ替えられる柔軟な構造を採用。
-                </div>
-            </li>
-        </ul>
-
-        <h3>👤 メンバー別 課題と目標</h3>
-        <div class="member-grid">
-            <div class="member-card">
-                <div class="member-name">中田 邦枝</div>
-                <div class="member-text"><span class="tag-label label-challenge">課題</span>SP版ヘッダーのアニメーション（展開動作）におけるレイヤー構造の複雑化。</div>
-                <div class="member-text"><span class="tag-label label-goal">目標</span>Header/Footerを全画面に適用し、サイト全体のナビゲーション体験を統一する。</div>
-            </div>
-            <div class="member-card">
-                <div class="member-name">宇佐見 海斗</div>
-                <div class="member-text"><span class="tag-label label-challenge">課題</span>Slotコンポーネントの概念理解と、チームメンバーへの使用方法のレクチャー。</div>
-                <div class="member-text"><span class="tag-label label-goal">目標</span>パターンライブラリを充実させ、新規ページ作成時間を50%短縮する。</div>
-            </div>
-        </div>
-    </section>
-
-</div>
+    </div>
 
 </body>
 </html>
