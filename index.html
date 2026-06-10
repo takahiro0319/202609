@@ -3,406 +3,363 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026年3月 勉強会活動報告書</title>
+    <title>2026年5月 勉強会活動報告書</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-            background-color: #f8fafc;
-            color: #334155;
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans JP', 'sans-serif'],
+                        serif: ['Merriweather', 'Noto Sans JP', 'serif'],
+                    }
+                }
+            }
         }
-        .section-title {
-            letter-spacing: 0.05em;
+    </script>
+    <style>
+        .gradient-top {
+            border-top: 8px solid;
+            border-image: linear-gradient(90deg, #005088 0%, #4f46e5 100%) 1;
+        }
+        .section-header-a { background: linear-gradient(135deg, #003e70 0%, #4f46e5 100%); }
+        .section-header-b { background: linear-gradient(135deg, #065f46 0%, #10b981 100%); }
+        .section-header-c { background: linear-gradient(135deg, #4c1d95 0%, #8b5cf6 100%); }
+
+        .custom-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .custom-list li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: currentColor;
+            font-size: 0.8rem;
+            top: 0.2rem;
+            opacity: 0.7;
+        }
+        .date-badge {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
     </style>
 </head>
-<body class="antialiased py-10">
+<body class="bg-slate-50 text-slate-800 pb-20">
 
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <!-- Header -->
-        <header class="mb-16 text-center">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">2026年3月 勉強会活動報告書</h1>
-            <p class="text-xl text-slate-600 font-medium">Design System Project / 月間詳細サマリー及び個人別成長計画</p>
-            <div class="w-24 h-1 bg-blue-500 mx-auto mt-8 rounded-full"></div>
-        </header>
+    <!-- Header / 表紙 -->
+    <header class="w-full min-h-[55vh] flex flex-col justify-center items-center p-6 text-center bg-[#fffaf1] gradient-top shadow-sm mb-12">
+        <h1 class="text-4xl md:text-6xl font-bold text-[#003e70] mb-6 leading-tight font-serif">2026年5月<br>勉強会活動報告書</h1>
+        <div class="h-1 w-20 bg-indigo-600 mb-6"></div>
+        <p class="text-lg md:text-xl text-slate-500 tracking-[0.2em] font-light uppercase">Design System Project / 月間詳細サマリー及び個人別成長計画</p>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 space-y-24">
 
         <!-- ==========================================
              TEAM A
         ========================================== -->
-        <section class="mb-20">
-            <div class="flex items-center justify-between mb-8 border-b-2 border-blue-200 pb-4">
-                <h2 class="text-3xl font-bold text-blue-800 flex items-center gap-3 section-title">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                    Team A
-                </h2>
-                <span class="bg-blue-100 text-blue-700 text-sm px-4 py-1.5 rounded-full font-bold shadow-sm">開催日: 3/11, 3/18, 3/25, 4/1</span>
+        <section class="space-y-8">
+            <div class="section-header-a text-white p-8 rounded-2xl shadow-lg relative overflow-hidden">
+                <div class="relative z-10">
+                    <div class="flex flex-wrap items-center gap-3 mb-4">
+                        <h2 class="text-3xl md:text-5xl font-bold font-serif">Team A</h2>
+                        <span class="date-badge px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fa-regular fa-calendar-days mr-2"></i>5/20
+                        </span>
+                    </div>
+                    <p class="text-lg md:text-xl opacity-90">加藤 美央 / 高橋 来実</p>
+                    <p class="text-xs md:text-sm mt-3 text-slate-200 opacity-80 max-w-3xl">
+                        テーマ：AIによる自動コーディング（Figma Make）実演、WOFFフォント読込トラブルシューティング、デザインファンデーション等の設計定義の検証
+                    </p>
+                </div>
+                <i class="fa-solid fa-users absolute right-[-20px] bottom-[-20px] text-white opacity-10 text-9xl"></i>
             </div>
 
-            <!-- チームハイライト -->
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 mb-12">
-                <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center">
-                    <span class="w-2 h-6 bg-blue-500 rounded-full mr-3"></span>
-                    チーム活動ハイライト
-                </h3>
-                <div class="space-y-4 text-slate-700 leading-relaxed">
-                    <p>当月は、複雑なデザイン要素のレイアウト修正、SP版におけるオートレイアウトの徹底、および作業の効率化（コンポーネント化、バリアント、ネスト機能の活用）に重点を置きました。サムネイル設定を通じたデザイン基礎（空間と色彩）の共有も行われ、技術とデザイン思考の両面でレベルアップを図りました。</p>
-                </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- 加藤 美央 -->
+                <article class="bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden flex flex-col justify-between">
+                    <div class="bg-indigo-50 px-6 py-4 border-b border-indigo-100 flex justify-between items-center">
+                        <h3 class="font-bold text-indigo-900 text-xl font-serif">加藤 美央</h3>
+                        <span class="text-xs font-bold text-indigo-400">MIO KATO</span>
+                    </div>
+                    <div class="p-6 space-y-6 flex-grow">
+                        <div>
+                            <h4 class="text-sm font-bold text-indigo-600 mb-2 flex items-center gap-2"><i class="fa-solid fa-square-check"></i> 実施した内容</h4>
+                            <ul class="custom-list text-slate-600 text-sm leading-relaxed text-indigo-600">
+                                <li><strong>SP版カードコンポーネント構造修正：</strong>PC版をベースに、ネストされたインスタンスを活用して構造を一新。</li>
+                                <li><strong>バリアントの競合解消：</strong>プロパティ名とバリアント構造を整理しエラーを解決。</li>
+                                <li><strong>マスク機能の徹底適用：</strong>サムネイル画像にマスク処理とアスペクト比ロックを設定。</li>
+                                <li><strong>デザイン基礎：</strong>プリミティブとセマンティックの概念、8の倍数の文字・行間定義の反復。</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-amber-600 mb-2 flex items-center gap-2"><i class="fa-solid fa-triangle-exclamation"></i> 現状の課題</h4>
+                            <p class="text-sm text-slate-600 pl-2 border-l-2 border-amber-200">
+                                画像を差し替える際、アスペクト比の固定や最小・最大サイズが親コンポーネントから正しく継承されない場合のトラブル原因の分析。
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-emerald-600 mb-2 flex items-center gap-2"><i class="fa-solid fa-bullseye"></i> 短期目標</h4>
+                            <p class="text-sm text-slate-600 pl-2 border-l-2 border-emerald-200">
+                                PC版の共通コンポーネントとバリアント構造をSP版カードに美しく適用しきり、全ページのカード作成をクリーンに完成させる。
+                            </p>
+                        </div>
+                        <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-100 text-xs">
+                            <h5 class="font-bold text-indigo-800 mb-1 flex items-center gap-1"><i class="fa-solid fa-chart-line"></i> 専門性向上の予測とNext Step</h5>
+                            <p class="text-slate-700 leading-relaxed">
+                                PC/SP兼用でのレスポンシブなコンポーネント設計や、バリアブル機能による「デザイントークン」の適用範囲を拡張。どのような文字数が流入しても崩れないシステマチックなUI開発力を向上させる。
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 高橋 来実 -->
+                <article class="bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden flex flex-col justify-between">
+                    <div class="bg-indigo-50 px-6 py-4 border-b border-indigo-100 flex justify-between items-center">
+                        <h3 class="font-bold text-indigo-900 text-xl font-serif">高橋 来実</h3>
+                        <span class="text-xs font-bold text-indigo-400">KURUMI TAKAHASHI</span>
+                    </div>
+                    <div class="p-6 space-y-6 flex-grow">
+                        <div>
+                            <h4 class="text-sm font-bold text-indigo-600 mb-2 flex items-center gap-2"><i class="fa-solid fa-square-check"></i> 実施した内容</h4>
+                            <ul class="custom-list text-slate-600 text-sm leading-relaxed text-indigo-600">
+                                <li><strong>AIコーディング（Figma Make）の実演視察：</strong>プロトタイプから「Figma Make」を送信してコード自動生成するデモを学習。</li>
+                                <li><strong>プロンプトエンジニアリング：</strong>AIに対して「あなたは優秀なコーダーです」などの前提条件を設定する有効性を確認。</li>
+                                <li><strong>読込エラー対応：</strong>リソースインポートエラーやWOFF（Web Open Font Format）のインポート制限の原因調査。</li>
+                                <li><strong>デザインファンデーション定義：</strong>テキスト、色、スペーシングルール、ラディウスなどの定義の言語化。</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-amber-600 mb-2 flex items-center gap-2"><i class="fa-solid fa-triangle-exclamation"></i> 現状の課題</h4>
+                            <p class="text-sm text-slate-600 pl-2 border-l-2 border-amber-200">
+                                実技におけるデザインデータの整理（不要レイヤーの一掃）に加え、デザインファンデーションやプリミティブといった上流設計概念を他者へ論理的に口頭説明・言語化する能力の育成。
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-emerald-600 mb-2 flex items-center gap-2"><i class="fa-solid fa-bullseye"></i> 短期目標</h4>
+                            <p class="text-sm text-slate-600 pl-2 border-l-2 border-emerald-200">
+                                次回までに「デザインファンデーション」の要点（9番の項目）を自身で簡潔にまとめ、他メンバーに論理的かつ説得力を持って説明できるように完璧に準備する。
+                            </p>
+                        </div>
+                        <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-100 text-xs">
+                            <h5 class="font-bold text-indigo-800 mb-1 flex items-center gap-1"><i class="fa-solid fa-chart-line"></i> 専門性向上の予測とNext Step</h5>
+                            <p class="text-slate-700 leading-relaxed">
+                                単に指示されたUIをビジュアル化する作業者から、Figma MakeなどのAIコーディング技術の仕組み（トークンとコードの連動性）を把握した次世代の「テクニカルデザイナー」へシフト。フォント仕様に関する知識を深め、エンジニア連携コストを最小化する。
+                            </p>
+                        </div>
+                    </div>
+                </article>
             </div>
-
-            <!-- 個人レポート: 加藤 美央 -->
-            <article class="bg-white rounded-2xl shadow-md border-t-4 border-t-blue-500 p-8 md:p-12 mb-12">
-                <div class="flex items-center gap-4 mb-8 pb-6 border-b border-slate-100">
-                    <div class="w-16 h-16 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-2xl font-bold border-2 border-blue-200">加</div>
-                    <div>
-                        <h3 class="text-2xl font-extrabold text-slate-900">加藤 美央</h3>
-                        <p class="text-blue-600 font-medium">個人目標・進捗レポート</p>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                    <!-- 実施内容 -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            実施した内容
-                        </h4>
-                        <ul class="list-disc list-outside ml-5 space-y-2 text-slate-600">
-                            <li>PC版およびSP版のカードコンポーネントの構造修正。</li>
-                            <li>画像のマスク処理、アスペクト比の固定、タグ要素のバリアント化。</li>
-                            <li>Figmaの「ネスト機能」や「バリアブル設定」を利用した、親コンポーネントからのテキストや画像の一元管理設定。</li>
-                            <li>サムネイルの独自デザイン制作によるデザイン基礎の反復。</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- 課題 -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                            現状の課題
-                        </h4>
-                        <p class="text-slate-600 leading-relaxed">
-                            コンポーネント内の複雑なネスト構造や、PC版・SP版をまたいだレスポンシブなプロパティ管理方法について、仕組みの理解がまだ追いついていない部分がありました。また、画像のマスク処理などの階層構造において、不要なフレームが残ってしまうケースが見受けられました。
-                        </p>
-                    </div>
-
-                    <!-- 目標 -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                            短期目標
-                        </h4>
-                        <p class="text-slate-600 leading-relaxed">
-                            既存のカードをお手本とし、与えられたアイテムを使用してゼロから複雑なコンポーネント（オートレイアウト、ネスト、バリアントの組み合わせ）を一人で構築し完遂すること。これを「卒業試験」としてクリアする。
-                        </p>
-                    </div>
-
-                    <!-- 専門性向上の予測とネクストステップ -->
-                    <div class="bg-blue-50 rounded-xl p-6 border border-blue-100">
-                        <h4 class="text-lg font-bold text-blue-900 mb-3 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
-                            UI/WEBの専門性を高めるための予測とNext Step
-                        </h4>
-                        <p class="text-sm text-blue-800 leading-relaxed font-medium">
-                            Figmaの「ネスト機能」や「バリアント」を極めることは、ReactやVueといったモダンなフロントエンドフレームワークの思考（Propsの受け渡しやコンポーネントの再利用性）に直結します。<br><br>
-                            このコンポーネント指向の設計を完全にマスターすることで、大規模なデザインシステムにおける保守性や拡張性を飛躍的に高めることができます。今後は、Figma Variablesを活用した高度なデザイントークン（色や余白の変数化）の設計へとステップアップし、よりシステム的で強牢なUI設計ができるようになるべきです。
-                        </p>
-                    </div>
-                </div>
-            </article>
-
-            <!-- 個人レポート: 高橋 来実 -->
-            <article class="bg-white rounded-2xl shadow-md border-t-4 border-t-blue-500 p-8 md:p-12">
-                <div class="flex items-center gap-4 mb-8 pb-6 border-b border-slate-100">
-                    <div class="w-16 h-16 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-2xl font-bold border-2 border-blue-200">高</div>
-                    <div>
-                        <h3 class="text-2xl font-extrabold text-slate-900">高橋 来実</h3>
-                        <p class="text-blue-600 font-medium">個人目標・進捗レポート</p>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                    <!-- 実施内容 -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            実施した内容
-                        </h4>
-                        <ul class="list-disc list-outside ml-5 space-y-2 text-slate-600">
-                            <li>SP版デザインの組み立てと、親・子・兄弟関係を意識したオートレイアウトの階層的な適用。</li>
-                            <li>要素間のルール分析に基づく正確な間隔調整。</li>
-                            <li>フッターのアコーディオン機能のフレーム設定修正。</li>
-                            <li>タイムトライアルを通じた効率的な組版と、ネスト機能を利用したアイコン等の管理。</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- 課題 -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                            現状の課題
-                        </h4>
-                        <p class="text-slate-600 leading-relaxed">
-                            SP版の構築において、作業の手数が多い（非効率な手順となっている）ことが課題でした。また、アコーディオンなど複雑な状態管理を持つコンポーネントにおいて、フレームとオートレイアウトの設定を誤り、構造的なバグを生じさせていました。
-                        </p>
-                    </div>
-
-                    <!-- 目標 -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                            短期目標
-                        </h4>
-                        <p class="text-slate-600 leading-relaxed">
-                            教わった効率的なAuto Layoutの構築手順（親・子・兄弟関係を意識したグループ化）を定着させること。タイムトライアルなどの制限時間内（20分程度）で、クリーンな状態から正確かつ迅速にUIを構築する技術を身につける。
-                        </p>
-                    </div>
-
-                    <!-- 専門性向上の予測とネクストステップ -->
-                    <div class="bg-blue-50 rounded-xl p-6 border border-blue-100">
-                        <h4 class="text-lg font-bold text-blue-900 mb-3 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
-                            UI/WEBの専門性を高めるための予測とNext Step
-                        </h4>
-                        <p class="text-sm text-blue-800 leading-relaxed font-medium">
-                            UIの階層構造を「親・子・兄弟」としてロジカルに構築する力は、まさにWebブラウザが解釈する「DOMツリー」の構造理解に他なりません。<br><br>
-                            この構造設計に慣れることで、フロントエンドエンジニアとの協業時に「実装不可能なデザイン」を作ることがなくなり、劇的に連携がスムーズになります。今後は、CSSの「Flexbox」や「CSS Grid」のコードの概念を意識しながらFigmaを触ることで、デザインと実装の乖離をなくすハイブリッドなスキルを習得すべきです。
-                        </p>
-                    </div>
-                </div>
-            </article>
         </section>
 
         <!-- ==========================================
              TEAM B
         ========================================== -->
-        <section class="mb-20">
-            <div class="flex items-center justify-between mb-8 border-b-2 border-indigo-200 pb-4">
-                <h2 class="text-3xl font-bold text-indigo-800 flex items-center gap-3 section-title">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                    Team B
-                </h2>
-                <span class="bg-indigo-100 text-indigo-700 text-sm px-4 py-1.5 rounded-full font-bold shadow-sm">開催日: 3/27</span>
+        <section class="space-y-8">
+            <div class="section-header-b text-white p-8 rounded-2xl shadow-lg relative overflow-hidden">
+                <div class="relative z-10">
+                    <div class="flex flex-wrap items-center gap-3 mb-4">
+                        <h2 class="text-3xl md:text-5xl font-bold font-serif">Team B</h2>
+                        <span class="date-badge px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fa-regular fa-calendar-days mr-2"></i>5/1
+                        </span>
+                    </div>
+                    <p class="text-lg md:text-xl opacity-90">菅原 望美 / 小野原 梨沙</p>
+                    <p class="text-xs md:text-sm mt-3 text-slate-200 opacity-80 max-w-3xl">
+                        テーマ：タグパターンの6種類拡張と並び順整理、カードSP版（横型・縦型）のバリアント分岐設計、5大インタラクション状態の座学的定義
+                    </p>
+                </div>
+                <i class="fa-solid fa-layer-group absolute right-[-20px] bottom-[-20px] text-white opacity-10 text-9xl"></i>
             </div>
 
-            <!-- チームハイライト -->
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 mb-12">
-                <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center">
-                    <span class="w-2 h-6 bg-indigo-500 rounded-full mr-3"></span>
-                    チーム活動ハイライト
-                </h3>
-                <div class="space-y-4 text-slate-700 leading-relaxed">
-                    <p>学生向け口コミサイトの改修作業に伴い、Webサイトのレスポンシブな挙動をFigma上で完全に再現するトレーニングを行いました。Auto Layoutの「内包（Hug contents）」と「コンテナに合わせて拡大（Fill container）」の使い分け、およびブレイクポイントに基づく最大幅・最小幅の設定を徹底しました。</p>
-                </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 菅原 望美 -->
+                <article class="bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden flex flex-col justify-between">
+                    <div class="bg-emerald-50 px-6 py-4 border-b border-emerald-100 flex justify-between items-center">
+                        <h3 class="font-bold text-emerald-900 text-xl font-serif">菅原 望美</h3>
+                        <span class="text-xs font-bold text-emerald-400">NOZOMI SUGAWARA</span>
+                    </div>
+                    <div class="p-6 space-y-6 flex-grow">
+                        <div>
+                            <h4 class="text-sm font-bold text-emerald-600 mb-2 flex items-center gap-2"><i class="fa-solid fa-square-check"></i> 実施した内容</h4>
+                            <ul class="custom-list text-slate-600 text-sm leading-relaxed text-emerald-600">
+                                <li><strong>タグバリアント拡張：</strong>タグのバリアントを6パターンまで拡張し、表示順を整理。</li>
+                                <li><strong>SP版別バリエーション作成：</strong>既存のイベントカードコンポーネントにデバイス別バリアント（横型・縦型）を追加。</li>
+                                <li><strong>UI用語の定義学習：</strong>ハンバーガー/ドロワーの違い、カルーセル（回転木馬）、プログレスバー、プレースホルダー、トースト等の概念定義。</li>
+                                <li><strong>ボタンのインタラクション：</strong>3つの見た目と5つの状態（デフォルト、ホバー、フォーカス、アクティブ、ディセーブル）を網羅。</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-amber-600 mb-2 flex items-center gap-2"><i class="fa-solid fa-triangle-exclamation"></i> 現状の課題</h4>
+                            <p class="text-sm text-slate-600 pl-2 border-l-2 border-amber-200">
+                                マージン（外側）とパディング（内側）を逆転して記憶していた箇所の修正。また、複雑なタグ数増減におけるネストインスタンスの上位レイヤー同期の設定。
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-emerald-600 mb-2 flex items-center gap-2"><i class="fa-solid fa-bullseye"></i> 短期目標</h4>
+                            <p class="text-sm text-slate-600 pl-2 border-l-2 border-emerald-200">
+                                今回学習した座学内容（UI用語やボタンの5大インタラクションなど）の要点を、次回小野原梨沙氏に対して論理的に説明し、自身の言語化スキルを高める。
+                            </p>
+                        </div>
+                        <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100 text-xs">
+                            <h5 class="font-bold text-emerald-800 mb-1 flex items-center gap-1"><i class="fa-solid fa-chart-line"></i> 専門性向上の予測とNext Step</h5>
+                            <p class="text-slate-700 leading-relaxed">
+                                前職のエンジニア経験を活かし、ボタンの「フォーカス（Focus）」「ディセーブル（Disabled）」状態の裏にあるCSSスタイルやWebアクセシビリティの概念をFigma上に可視化。実装視点を持つプロフェッショナルUIデザイナーへの成長。
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 小野原 梨沙 -->
+                <article class="bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden flex flex-col justify-between">
+                    <div class="bg-emerald-50 px-6 py-4 border-b border-emerald-100 flex justify-between items-center">
+                        <h3 class="font-bold text-emerald-900 text-xl font-serif">小野原 梨沙</h3>
+                        <span class="text-xs font-bold text-emerald-400">RISA ONOHARA</span>
+                    </div>
+                    <div class="p-6 space-y-6 flex-grow">
+                        <div>
+                            <h4 class="text-sm font-bold text-emerald-600 mb-2 flex items-center gap-2"><i class="fa-solid fa-square-check"></i> 実施した内容</h4>
+                            <ul class="custom-list text-slate-600 text-sm leading-relaxed text-emerald-600">
+                                <li><strong>構造デバッグ：</strong>バリアント命名や親子関係の入れ子で発生していた「壊れ（プロパティが表示されない不具合）」の不具合修正。</li>
+                                <li><strong>ネストと属性継承の実装：</strong>「Day Image」を分かりやすい「サムネイル」にリネームし、属性継承の設定を反映。</li>
+                                <li><strong>アセットの整理・クリーンアップ：</strong>未使用のレイヤーや古いコンポーネントを削除しファイルを軽量化。</li>
+                                <li><strong>UIパターン学習：</strong>カルーセル、トースト、ドロワーなどの役割と表示秒数制限などの座学理解。</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-amber-600 mb-2 flex items-center gap-2"><i class="fa-solid fa-triangle-exclamation"></i> 現状の課題</h4>
+                            <p class="text-sm text-slate-600 pl-2 border-l-2 border-amber-200">
+                                インスタンス継承時における一部プロパティの不活性化など、コンポーネントが壊れる際のレイヤー不整合原因の理論的完全把握。
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-emerald-600 mb-2 flex items-center gap-2"><i class="fa-solid fa-bullseye"></i> 短期目標</h4>
+                            <p class="text-sm text-slate-600 pl-2 border-l-2 border-emerald-200">
+                                既存の壊れていたカード構造のバグをすべて解消し、ネストや画像差し替えがスムーズに機能するSP版カードを完璧に量産可能な状態にする。
+                            </p>
+                        </div>
+                        <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100 text-xs">
+                            <h5 class="font-bold text-emerald-800 mb-1 flex items-center gap-1"><i class="fa-solid fa-chart-line"></i> 専門性向上の予測とNext Step</h5>
+                            <p class="text-slate-700 leading-relaxed">
+                                どのようなコンポーネント崩れが発生しても即座に問題のレイヤー階層を特定してデバッグできる力。Figmaアセットを常にクリーンに保ち、データパフォーマンスを落とさない「デザインシステム管理者」の実務能力。
+                            </p>
+                        </div>
+                    </div>
+                </article>
             </div>
-
-            <!-- 個人レポート: 菅原 望美 -->
-            <article class="bg-white rounded-2xl shadow-md border-t-4 border-t-indigo-500 p-8 md:p-12">
-                <div class="flex items-center gap-4 mb-8 pb-6 border-b border-slate-100">
-                    <div class="w-16 h-16 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center text-2xl font-bold border-2 border-indigo-200">菅</div>
-                    <div>
-                        <h3 class="text-2xl font-extrabold text-slate-900">菅原 望美</h3>
-                        <p class="text-indigo-600 font-medium">個人目標・進捗レポート</p>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                    <!-- 実施内容 -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            実施した内容
-                        </h4>
-                        <ul class="list-disc list-outside ml-5 space-y-2 text-slate-600">
-                            <li>サイトの横幅に応じたレスポンシブな挙動（ブレイクポイント1280pxや664pxに基づく最大値・最小値の指定）の実装。</li>
-                            <li>テキストの自動改行を促す「内包設定」の適用。</li>
-                            <li>画面縮小時に要素が一緒に伸縮するための「コンテナに合わせた拡大」の調整。</li>
-                            <li>要素のグループ化と将来的なカードコンポーネント化に向けた準備。</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- 課題 -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                            現状の課題
-                        </h4>
-                        <p class="text-slate-600 leading-relaxed">
-                            Auto Layoutの向き（縦・横）や、「内包」と「コンテナ合わせ」の概念が一部混同しており、画面幅を変えた際にテキストが意図通りに改行されず、はみ出してしまうなどのレイアウト崩れが発生していました。
-                        </p>
-                    </div>
-
-                    <!-- 目標 -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                            短期目標
-                        </h4>
-                        <p class="text-slate-600 leading-relaxed">
-                            指導された「内包（Hug contents）」と「コンテナに合わせて拡大（Fill container）」を適切に使い分け、ブレイクポイントに応じた可変レイアウトを自力で完全に再現する。デモで示されたコンポーネントの設定を自身の手で反映させる。
-                        </p>
-                    </div>
-
-                    <!-- 専門性向上の予測とネクストステップ -->
-                    <div class="bg-indigo-50 rounded-xl p-6 border border-indigo-100">
-                        <h4 class="text-lg font-bold text-indigo-900 mb-3 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
-                            UI/WEBの専門性を高めるための予測とNext Step
-                        </h4>
-                        <p class="text-sm text-indigo-800 leading-relaxed font-medium">
-                            今回の学習で得た「可変レイアウト（フルードデザイン）」の挙動を体得することは、PCからスマートフォンまであらゆるデバイスに最適化されたUI設計の基礎となります。<br><br>
-                            今後は、実装上の「CSSメディアクエリ」や、最近主流になりつつある「コンテナクエリ」の知識をインプットすべきです。これにより、「どの幅でどう見せるべきか」という実装負荷の低い現実的なデザインを、根拠を持って提案できるようになります。
-                        </p>
-                    </div>
-                </div>
-            </article>
         </section>
 
         <!-- ==========================================
              TEAM C
         ========================================== -->
-        <section class="mb-20">
-            <div class="flex items-center justify-between mb-8 border-b-2 border-emerald-200 pb-4">
-                <h2 class="text-3xl font-bold text-emerald-800 flex items-center gap-3 section-title">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                    Team C
-                </h2>
-                <span class="bg-emerald-100 text-emerald-700 text-sm px-4 py-1.5 rounded-full font-bold shadow-sm">開催日: 3/27</span>
+        <section class="space-y-8">
+            <div class="section-header-c text-white p-8 rounded-2xl shadow-lg relative overflow-hidden">
+                <div class="relative z-10">
+                    <div class="flex flex-wrap items-center gap-3 mb-4">
+                        <h2 class="text-3xl md:text-5xl font-bold font-serif">Team C</h2>
+                        <span class="date-badge px-3 py-1 rounded-full text-sm font-medium">
+                            <i class="fa-regular fa-calendar-days mr-2"></i>5/15, 5/29
+                        </span>
+                    </div>
+                    <p class="text-lg md:text-xl opacity-90">宇佐見 海斗 / 中田 邦枝</p>
+                    <p class="text-xs md:text-sm mt-3 text-slate-200 opacity-80 max-w-3xl">
+                        テーマ：カードコンポーネント（ラージ・スモール・デフォルト）整理、アフォーダンス概念、ヒックの法則とジャムの実験、調達セクション実務作成
+                    </p>
+                </div>
+                <i class="fa-solid fa-gears absolute right-[-20px] bottom-[-20px] text-white opacity-10 text-9xl"></i>
             </div>
 
-            <!-- チームハイライト -->
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 mb-12">
-                <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center">
-                    <span class="w-2 h-6 bg-emerald-500 rounded-full mr-3"></span>
-                    チーム活動ハイライト
-                </h3>
-                <div class="space-y-4 text-slate-700 leading-relaxed">
-                    <p>デザインの技術的整合性に焦点を当て、全体の横幅を正確に1190ピクセルに統一する作業を実施しました。オートレイアウトにおける「線（Stroke）」の包含設定が引き起こすピクセル単位のズレを解消し、アスペクト比の固定とコンテナに合わせた拡大・縮小という、レスポンシブデザインの最終調整に取り組みました。</p>
-                </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 宇佐見 海斗 -->
+                <article class="bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden flex flex-col justify-between">
+                    <div class="bg-purple-50 px-6 py-4 border-b border-purple-100 flex justify-between items-center">
+                        <h3 class="font-bold text-purple-900 text-xl font-serif">宇佐見 海斗</h3>
+                        <span class="text-xs font-bold text-purple-400">KAITO USAMI</span>
+                    </div>
+                    <div class="p-6 space-y-6 flex-grow">
+                        <div>
+                            <h4 class="text-sm font-bold text-purple-600 mb-2 flex items-center gap-2"><i class="fa-solid fa-square-check"></i> 実施した内容</h4>
+                            <ul class="custom-list text-slate-600 text-sm leading-relaxed text-purple-600">
+                                <li><strong>コンポーネントのクリーンアップ：</strong>ラージ・スモール・デフォルトカードのレイアウトを1190pxの最大幅に再調整。</li>
+                                <li><strong>バリアントプロパティ競合解決：</strong>「日付あり」プロパティの重複によるエラーメッセージの完全修復。</li>
+                                <li><strong>余白整合性の確保：</strong>高さを「コンテナス」から「内包（Hug）」に再調整し崩れを防止。</li>
+                                <li><strong>認知心理学学習：</strong>ヒックの法則（意思決定時間の数式化）や、ジャムの実験に基づくアフォーダンス設計概念の習得。</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-amber-600 mb-2 flex items-center gap-2"><i class="fa-solid fa-triangle-exclamation"></i> 現状の課題</h4>
+                            <p class="text-sm text-slate-600 pl-2 border-l-2 border-amber-200">
+                                要素の幅や高さが可変縮小する際、オートレイアウト内の「均等配置」や「内包設定」の複合的な組み合わせルールに関する深い理解。
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-emerald-600 mb-2 flex items-center gap-2"><i class="fa-solid fa-bullseye"></i> 短期目標</h4>
+                            <p class="text-sm text-slate-600 pl-2 border-l-2 border-emerald-200">
+                                次回までに「ヒックの法則」「ジャムの法則」の数式や背景を完全に暗記し、実務でなぜ選択肢を減らすべきかの論理的根拠を解説できるようにする。
+                            </p>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-xl border border-purple-100 text-xs">
+                            <h5 class="font-bold text-purple-800 mb-1 flex items-center gap-1"><i class="fa-solid fa-chart-line"></i> 専門性向上の予測とNext Step</h5>
+                            <p class="text-slate-700 leading-relaxed">
+                                感覚のデザインから「人間工学・認知心理学（ヒックの法則など）」をデザインシステムに組み込み、科学的なUI配置設計ができるハイスペックなシニアデザイナーへ。
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 中田 邦枝 -->
+                <article class="bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden flex flex-col justify-between">
+                    <div class="bg-purple-50 px-6 py-4 border-b border-purple-100 flex justify-between items-center">
+                        <h3 class="font-bold text-purple-900 text-xl font-serif">中田 邦枝</h3>
+                        <span class="text-xs font-bold text-purple-400">KUNIE NAKATA</span>
+                    </div>
+                    <div class="p-6 space-y-6 flex-grow">
+                        <div>
+                            <h4 class="text-sm font-bold text-purple-600 mb-2 flex items-center gap-2"><i class="fa-solid fa-square-check"></i> 実施した内容</h4>
+                            <ul class="custom-list text-slate-600 text-sm leading-relaxed text-purple-600">
+                                <li><strong>実務への移行と応用：</strong>難易度の高い「調達セクション」の作成（4列可変オートレイアウト、検索バー内テキスト配置）。</li>
+                                <li><strong>解説会のリード：</strong>HEXカラー、16進数、RGB加法混色の仕組み（青=0000FF、紫=FF00FF）、プリミティブとセマンティックの役割などを宇佐見氏に共有。</li>
+                                <li><strong>心理学理論の習得：</strong>ヒックの法則における数式（$t = a + b \log_2(n + 1)$）と、選択肢削減効果を示すジャムの実験（24種 vs 6種）の学習。</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-amber-600 mb-2 flex items-center gap-2"><i class="fa-solid fa-triangle-exclamation"></i> 現状の課題</h4>
+                            <p class="text-sm text-slate-600 pl-2 border-l-2 border-amber-200">
+                                4列可変オートレイアウトなどで要素がはみ出したり折り返さなかったりする場合の微調整、および一部既存コンポーネントでの表示ズレ（48pxなど）の手動修正対応。
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-emerald-600 mb-2 flex items-center gap-2"><i class="fa-solid fa-bullseye"></i> 短期目標</h4>
+                            <p class="text-sm text-slate-600 pl-2 border-l-2 border-emerald-200">
+                                調達セクションの4列可変オートレイアウト構造を完全に完成させ、デザインシステムへ美しく組み込む。
+                            </p>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-xl border border-purple-100 text-xs">
+                            <h5 class="font-bold text-purple-800 mb-1 flex items-center gap-1"><i class="fa-solid fa-chart-line"></i> 専門性向上の予測とNext Step</h5>
+                            <p class="text-slate-700 leading-relaxed">
+                                他者への指導を機に、上流設計ルールのファシリテーターとして活躍。ジャムの法則を実際のクライアントワークに適用し、成約率を最大化する「グロースハック指向のUI/UXデザイナー」への進化。
+                            </p>
+                        </div>
+                    </div>
+                </article>
             </div>
-
-            <!-- 個人レポート: 宇佐見 海斗 -->
-            <article class="bg-white rounded-2xl shadow-md border-t-4 border-t-emerald-500 p-8 md:p-12 mb-12">
-                <div class="flex items-center gap-4 mb-8 pb-6 border-b border-slate-100">
-                    <div class="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl font-bold border-2 border-emerald-200">宇</div>
-                    <div>
-                        <h3 class="text-2xl font-extrabold text-slate-900">宇佐見 海斗</h3>
-                        <p class="text-emerald-600 font-medium">個人目標・進捗レポート</p>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                    <!-- 実施内容 -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            実施した内容
-                        </h4>
-                        <ul class="list-disc list-outside ml-5 space-y-2 text-slate-600">
-                            <li>デザインの最大幅を1190pxに調整し、横軸から縦軸へレイアウトが適応する設定の確認。</li>
-                            <li>画像要素のアスペクト比のロック。</li>
-                            <li>要素間の2ピクセルの不一致の原因を特定し、Stroke（線）の設定（含まれる/含まれない）を調整。</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- 課題 -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                            現状の課題
-                        </h4>
-                        <p class="text-slate-600 leading-relaxed">
-                            コンポーネントの横幅がプロジェクト指定の1190pxに統一されておらず、枠が適切に縮小しない設定のままでした。また、枠線の幅（Stroke）がレイアウトの計算に与える影響（ピクセル単位のズレ）に気づけておらず、デザインの精密さに欠ける部分がありました。
-                        </p>
-                    </div>
-
-                    <!-- 目標 -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                            短期目標
-                        </h4>
-                        <p class="text-slate-600 leading-relaxed">
-                            デザイン全体の幅を正確に1190pxに統一し、コンテンツが縮小するように正しく最大幅を設定する。また、写真などすべてのメディア要素に対してアスペクト比の固定を完璧に適用する。
-                        </p>
-                    </div>
-
-                    <!-- 専門性向上の予測とネクストステップ -->
-                    <div class="bg-emerald-50 rounded-xl p-6 border border-emerald-100">
-                        <h4 class="text-lg font-bold text-emerald-900 mb-3 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
-                            UI/WEBの専門性を高めるための予測とNext Step
-                        </h4>
-                        <p class="text-sm text-emerald-800 leading-relaxed font-medium">
-                            今回の「2pxのズレ」を修正する作業は、Webにおける「ボックスモデル（border-box と content-box の違い）」の概念そのものです。<br><br>
-                            ピクセルパーフェクトな設計意識を持つことで、エンジニアに対して余白や線の扱いを言語化し、正確な意図を伝達できるようになります。今後は、PaddingやMargin、Strokeの設定を場当たり的ではなくシステム化（デザイントークン化）し、ルールベースの設計を進めるべきです。
-                        </p>
-                    </div>
-                </div>
-            </article>
-
-            <!-- 個人レポート: 中田 邦枝 -->
-            <article class="bg-white rounded-2xl shadow-md border-t-4 border-t-emerald-500 p-8 md:p-12">
-                <div class="flex items-center gap-4 mb-8 pb-6 border-b border-slate-100">
-                    <div class="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl font-bold border-2 border-emerald-200">中</div>
-                    <div>
-                        <h3 class="text-2xl font-extrabold text-slate-900">中田 邦枝</h3>
-                        <p class="text-emerald-600 font-medium">個人目標・進捗レポート</p>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                    <!-- 実施内容 -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            実施した内容
-                        </h4>
-                        <ul class="list-disc list-outside ml-5 space-y-2 text-slate-600">
-                            <li>レスポンシブ挙動の修正（幅を固定値からコンテナ合わせに変更）。</li>
-                            <li>画面幅の縮小に応じて、内包される要素が自動的に縮小する設定の構築。</li>
-                            <li>大枠と小枠の二重オートレイアウトによる最大幅の制約実装。</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- 課題 -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                            現状の課題
-                        </h4>
-                        <p class="text-slate-600 leading-relaxed">
-                            幅の設定が固定値（固定ピクセル）になっていたため、画面幅に応じて要素が適切に縮小せず、コンテナからはみ出したり、不自然なレイアウト崩れを引き起こしたりしていました。
-                        </p>
-                    </div>
-
-                    <!-- 目標 -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                            短期目標
-                        </h4>
-                        <p class="text-slate-600 leading-relaxed">
-                            1185pxや1189pxなどの細かい幅のズレを修正し、全てのコンポーネントを基準の1190pxに設定する。その上で、画面を縮小した際に中の要素が外枠に合わせて追従して縮まる「応答性（レスポンシブ性）」を確保する。
-                        </p>
-                    </div>
-
-                    <!-- 専門性向上の予測とネクストステップ -->
-                    <div class="bg-emerald-50 rounded-xl p-6 border border-emerald-100">
-                        <h4 class="text-lg font-bold text-emerald-900 mb-3 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
-                            UI/WEBの専門性を高めるための予測とNext Step
-                        </h4>
-                        <p class="text-sm text-emerald-800 leading-relaxed font-medium">
-                            絶対値（固定ピクセル）の概念から脱却し、外枠に依存する「相対的・流動的なサイズ指定（%やvwの概念）」を習得することで、画面幅に左右されない堅牢なUIが作成できるようになります。<br><br>
-                            今後は「コンテンツの中身の量に依存するレイアウト」と「外側のコンテナ幅に依存するレイアウト」の使い分けを完璧にし、テキスト量が増減した際や、異なる言語に翻訳された際のエッジケースまでを想定したUI設計を意識していくべきです。
-                        </p>
-                    </div>
-                </div>
-            </article>
         </section>
 
-    </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-20 text-center text-slate-400 text-sm border-t border-slate-200 pt-10 px-4">
+        <p>&copy; 2026 Design System Project / Monthly Activity Report (May 2026)</p>
+    </footer>
 
 </body>
 </html>
